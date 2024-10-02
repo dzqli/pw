@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 import ParticleOptions from '@/app/assets/particles.snow.json';
@@ -24,6 +24,7 @@ export default function Home() {
         {isParticlesInit && (
           <Particles
             id="tsparticles"
+            // @ts-expect-error: JSON import string literal
             options={ParticleOptions}
           />
         )}
