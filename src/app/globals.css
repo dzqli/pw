@@ -2,14 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* TODO: implement themes after initial setup */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #483e5c;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #483e5c;
     --foreground: #ededed;
   }
 }
