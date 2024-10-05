@@ -22,9 +22,9 @@ const ROUTES = [
 
 const NavBar = () => {
   return (
-    <nav className="flex items-center justify-center flex-wrap gap-12 p-6">
+    <nav className="w-full flex fixed items-center justify-center flex-wrap gap-12 p-6">
       {ROUTES.map((r) => (
-        <Link href={r.route}>{r.name}</Link>
+        <Link key={`nav-link-${r.name}`} href={r.route}>{r.name}</Link>
       ))}
     </nav>
   )
