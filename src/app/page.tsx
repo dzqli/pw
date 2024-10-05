@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
-import ParticleOptions from '@/app/assets/particles.snow.json';
+import ParticleOptions from '@/assets/particles.snow.json';
 import { getTimeBand } from '@/helpers';
 
 export default function Home() {
