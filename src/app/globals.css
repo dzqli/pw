@@ -4,13 +4,13 @@
 
 /* TODO: implement themes after initial setup */
 :root {
-  --background: #483e5c;
-  --foreground: #ffffff;
+  --background: #f5fdff;
+  --foreground: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #483e5c;
+    --background: #2c1f36;
     --foreground: #ededed;
   }
 }

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import NavBar from '@/components/NavBar';
+import Providers from '@/app/providers';
 import localFont from 'next/font/local';
 import './globals.css';
 
@@ -28,7 +30,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <NavBar />
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
