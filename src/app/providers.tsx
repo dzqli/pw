@@ -1,7 +1,7 @@
 // providers.js
 'use client'
 
-import { createContext, PropsWithChildren, useEffect, useState } from 'react'
+import { PropsWithChildren, useEffect, useState } from 'react'
 import { initParticlesEngine } from '@tsparticles/react';
 import ParticleContext from '@/contexts/ParticleContext';
 import { loadSlim } from '@tsparticles/slim';
