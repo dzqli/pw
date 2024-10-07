@@ -1,3 +1,4 @@
+'use client'
 import { getTimeBand } from '@/helpers';
 
 export default function Home() {
