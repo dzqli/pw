@@ -1,0 +1,13 @@
+/* timeline css*/
+.timeline__item::before {
+  position: absolute;
+  content: ' ';
+  left: -0.875rem;
+  width: 1.5em;
+  height: 1.5em;
+  background-color: var(--background);
+  border: 0.25em solid var(--foreground);
+  border-radius: 50%;
+  z-index: 1;
+}
+
