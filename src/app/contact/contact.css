@@ -1,0 +1,10 @@
+.contact__card {
+  width: 600px;
+  height: 300px;
+  background-color: grey;
+}
+
+.contact__card img {
+  height: 80%;
+  width: auto;
+}
