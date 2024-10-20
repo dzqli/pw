@@ -28,6 +28,7 @@
   box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, .6);
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -36,6 +37,6 @@
 }
 
 .contact__card img {
-  height: 80%;
+  height: 60%;
   width: auto;
 }

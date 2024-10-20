@@ -14,7 +14,17 @@ const CardFront = () => (
 
 const CardBack = () => (
   <div className={`${MAIN_CLASS}__card__back`}>
-    Hi
+    <h3 className="text-3xl text-[#f8faf9]">David Li</h3>
+    <h6 className="text-[#425369] text-sm">Software Engineering</h6>
+    <br/>
+    <a
+      className="text-sm text-blue-900"
+      href="mailto:zq.david.li@gmail.com"
+      onClick={(e) => e.stopPropagation()}
+      onKeyDown={(e) => e.stopPropagation()}
+    >
+      zq.david.li@gmail.com
+    </a>
   </div>
 );
 
@@ -27,7 +37,11 @@ const Contact = () => {
       <div
         className={`${MAIN_CLASS}__card`}
         role="button"
-        onClick={() => setCardFlipped(prev => !prev)}
+        onClick={() => {
+          const selection = document.getSelection();
+          if (selection?.type === 'Range') return;
+          setCardFlipped(prev => !prev);
+        }}
         tabIndex={0}
         onKeyDown={(e) => {
           if(e.keyCode === 13){
