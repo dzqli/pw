@@ -12,6 +12,7 @@ const CardFront = () => (
   </div>
 );
 
+// TODO: fix contrast on card
 const CardBack = () => (
   <div className={`${MAIN_CLASS}__card__back`}>
     <h3 className="text-3xl text-[#f8faf9]">David Li</h3>
