@@ -34,6 +34,7 @@
 
 .contact__card__back {
   transform: rotateY(180deg);
+  cursor: default;
 }
 
 .contact__card img {

@@ -26,6 +26,14 @@ const CardBack = () => (
     >
       zq.david.li@gmail.com
     </a>
+    <a
+      className="text-sm text-blue-900"
+      href="https://www.linkedin.com/in/gydavidli/"
+      onClick={(e) => e.stopPropagation()}
+      onKeyDown={(e) => e.stopPropagation()}
+    >
+      in/gydavidli
+    </a>
   </div>
 );
 
