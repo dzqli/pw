@@ -37,6 +37,15 @@
   cursor: default;
 }
 
+.contact__card__link {
+  display: flex;
+  gap: 16px;
+
+  svg {
+    width: 20px;
+  };
+}
+
 .contact__card img {
   height: 60%;
   width: auto;

@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import Image from "next/image";
 import Logo from '@/assets/sample-logo-transparent.png';
+import LinkedInIcon from '@/assets/icons/linkedin';
+import MailIcon from '@/assets/icons/mail';
 import './contact.css';
 
 const MAIN_CLASS = 'contact';
@@ -18,22 +20,28 @@ const CardBack = () => (
     <h3 className="text-3xl text-[#f8faf9]">David Li</h3>
     <h6 className="text-[#425369] text-sm">Software Engineering</h6>
     <br/>
-    <a
-      className="text-sm text-blue-900"
-      href="mailto:zq.david.li@gmail.com"
-      onClick={(e) => e.stopPropagation()}
-      onKeyDown={(e) => e.stopPropagation()}
-    >
-      zq.david.li@gmail.com
-    </a>
-    <a
-      className="text-sm text-blue-900"
-      href="https://www.linkedin.com/in/gydavidli/"
-      onClick={(e) => e.stopPropagation()}
-      onKeyDown={(e) => e.stopPropagation()}
-    >
-      in/gydavidli
-    </a>
+    <div className={`${MAIN_CLASS}__card__link`}>
+      <MailIcon />
+      <a
+        className="text-sm text-blue-900"
+        href="mailto:zq.david.li@gmail.com"
+        onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
+      >
+        zq.david.li@gmail.com
+      </a>
+    </div>
+    <div className={`${MAIN_CLASS}__card__link`}>
+      <LinkedInIcon />
+      <a
+        className="text-sm text-blue-900"
+        href="https://www.linkedin.com/in/gydavidli/"
+        onClick={(e) => e.stopPropagation()}
+        onKeyDown={(e) => e.stopPropagation()}
+      >
+        in/gydavidli
+      </a>
+    </div>
   </div>
 );
 
