@@ -7,20 +7,20 @@ const About = () => {
   return (
     <div className={`${MAIN_CLASS} items-center justify-items-center px-8 gap-16 sm:px-20 font-[family-name:var(--font-geist-sans)]` }>
       <article>
-        <section id="intro" className={`${MAIN_CLASS} min-h-screen`}>
-          <h1 className="text-4xl font-bold leading-7 pt-[20vh] mb-2 sm:truncate sm:text-4xl sm:tracking-tight">
+        <section id="intro" className={`${MAIN_CLASS} min-h-screen flex flex-col`}>
+          <h1 className="text-4xl font-bold leading-7 pt-[40vh] mb-2 sm:truncate sm:text-4xl sm:tracking-tight">
             Hi.  I&#39;m David.
           </h1>
-          <div className="flex flex-row flex-wrap">
+          <div className="flex flex-row flex-wrap grow">
             <div className="min-w-[300px] w-1/2">
-              <p>
+              <p className="mt-2 mb-6">
                 I do software engineering!<br/>
                 This site is the beginnings of a personal playground: a place where I
                 get to explore tools, languages, and frameworks I'm interested in - and build utilities I need.<br/>
               </p>
-
+              <p className="text-sm text-[var(--secondary)]">More about me <span className="inline-block animate-bounce ml-2">&darr;</span></p>
             </div>
-            <Image className="ml-auto max-w-[200px]" src={AboutGraphic} alt="intro graphic" />
+            <Image className="ml-auto max-w-[200px] self-end pb-[10vh]" src={AboutGraphic} alt="intro graphic" />
           </div>
         </section>
         <section>
