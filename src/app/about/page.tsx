@@ -24,9 +24,11 @@ const About = () => {
           </div>
         </section>
         <section>
-          <h3>5+ years of building scalable web applications</h3>
-          <div>
-            <div>
+          <h2 className="text-4xl text-center font-bold mb-4 sm:truncate sm:text-4xl sm:tracking-tight">
+            5+ years of building scalable web applications
+          </h2>
+          <div className="flex flex-wrap">
+            <div className="min-w-[300px] flex-1 flex flex-col items-center">
               <h4>Frontend Mastery</h4>
               <p>
                 Drop me in any ecosystem and I'll hit the ground running.  POJO,
@@ -41,9 +43,7 @@ const About = () => {
                 <li>Sass</li>
               </ul>
             </div>
-          </div>
-          <div>
-            <div>
+            <div className="min-w-[300px] flex-1 flex flex-col items-center">
               <h4>Fullstack Shenanigans</h4>
               <p>
                 Who says devs have to stay in their own part of the stack?
