@@ -4,9 +4,10 @@
 
 /* TODO: implement themes after initial setup */
 :root {
-  --background: #f5fdff;
+  --background: #fafcff;
   --foreground: #000000;
   --secondary: #64748b;
+  --alternative: #2c1f36;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,6 +15,7 @@
     --background: #2c1f36;
     --secondary: #e5e7eb;
     --foreground: #ededed;
+    --alternative: #fafcff;
   }
 }
 
