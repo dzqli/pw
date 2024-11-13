@@ -5,8 +5,26 @@ import AboutGraphic from '@/assets/about-graphic-transparent.png';
 import AboutGraphicLight from '@/assets/about-graphic-transparent-white.png';
 import CodeIcon from '@/assets/icons/code';
 import WindowIcon from '@/assets/icons/window';
+import GqlLogo from '@/assets/logos/gql.png';
+import K8sLogo from '@/assets/logos/k8s.png';
+import MdbLogo from '@/assets/logos/mdb.png';
+import NjsLiteLogo from '@/assets/logos/njs-lite.png';
+import NjsDarkLogo from '@/assets/logos/njs-dark.png';
+import TfLogo from '@/assets/logos/tf.png';
+import TwLogo from '@/assets/logos/tw.png';
 
 const MAIN_CLASS = 'about';
+
+type TileProps = {
+  title: string;
+}
+const Tile = ({ children }: React.PropsWithChildren<TileProps>) => {
+  return (
+    <div className="rounded-2xl bg-current flex justify-center items-center w-[30vw] h-[30vw] md:w-[20vw] md:h-[20vw] lg:w-[10vw] lg:h-[10vw]">
+      {children}
+    </div>
+  );
+}
 
 const About = () => {
   const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -14,7 +32,7 @@ const About = () => {
     <div className={`${MAIN_CLASS} items-center justify-items-center px-8 gap-16 sm:px-20 font-[family-name:var(--font-geist-sans)]` }>
       <article>
         <section id="intro" className={`${MAIN_CLASS} min-h-screen flex flex-col`}>
-          <h1 className="text-4xl font-bold leading-7 pt-[40vh] mb-2 sm:truncate sm:text-4xl sm:tracking-tight">
+          <h1 className="text-4xl font-bold leading-7 pt-[40vh] mb-2 sm:truncate sm:tracking-tight">
             Hi.  I&#39;m David.
           </h1>
           <div className="flex flex-row flex-wrap grow">
@@ -22,7 +40,7 @@ const About = () => {
               <p className="mt-2 mb-6">
                 I do software engineering!<br/>
                 This site is the beginnings of a personal playground: a place where I
-                get to explore tools, languages, and frameworks I'm interested in - and build utilities I need.<br/>
+                get to explore tools, languages, and frameworks I&#39;m interested in - and build utilities I need.<br/>
               </p>
               <p className="text-sm text-[var(--secondary)]">More about me <span className="inline-block animate-bounce ml-2">&darr;</span></p>
             </div>
@@ -30,23 +48,23 @@ const About = () => {
           </div>
         </section>
         <section>
-          <h2 className="text-4xl text-center font-bold mb-10 sm:truncate sm:text-4xl sm:tracking-tight">
+          <h1 className="text-4xl text-center font-bold sm:truncate sm:text-4xl sm:tracking-tight">
             5+ years of building scalable web applications
-          </h2>
+          </h1>
           <div className="flex flex-wrap">
-            <div className="min-w-[300px] flex-1 flex flex-col items-center sm:px-10">
+            <div className="min-w-[300px] flex-1 flex flex-col items-center my-20 sm:px-20 sm:border-r border-current">
               <WindowIcon className="h-10 w-10 fill-[var(--alternative)] mb-4" />
               <h4 className="text-3xl text-center mb-4 text-[var(--alternative)]">
                 Frontend Adept
               </h4>
-              <p className="mb-4">
-                Drop me in any ecosystem and I'll hit the ground running.  POJO,
-                jQuery, Ember, or Vue?  No sweat, I've seen it all, and more too.
+              <p className="mb-8">
+                Drop me in any ecosystem and I&#39;ll hit the ground running.  POJO,
+                jQuery, Ember, or Vue?  No sweat, I&#39;ve seen it all, and more too.
               </p>
-              <h6 className="text-xl text-center mb-2 font-semibold">
+              <h6 className="text-xl text-center mb-2 font-medium">
                 My bread and butter
               </h6>
-              <ul className="flex flex-col items-center mb-12">
+              <ul className="flex flex-col items-center">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>Javascript</li>
@@ -54,26 +72,26 @@ const About = () => {
                 <li>Sass</li>
               </ul>
             </div>
-            <div className="min-w-[300px] flex-1 flex flex-col items-center sm:px-10">
+            <div className="min-w-[300px] flex-1 flex flex-col items-center my-20 sm:px-20">
               <CodeIcon className="h-10 w-10 fill-[var(--alternative)] mb-4" />
               <h4 className="text-3xl text-center mb-4 text-[var(--alternative)]">
                 Fullstack Curious
               </h4>
-              <p className="mb-4">
+              <p className="mb-8">
                 Who says devs have to stay in their own part of the stack?
               </p>
               <h6 className="text-xl text-center mb-2 font-medium">
                 A few of my sidequests:
               </h6>
-              <ul className="flex flex-col items-center mb-12">
-                <li className="text-center mb-2">
-                  Untagling a mess of unnamed mp3s by writing a Python script
-                </li>
+              <ul className="flex flex-col items-center">
                 <li className="text-center mb-2">
                   Implementing RESTful endpoints in Golang microservices
                 </li>
                 <li className="text-center mb-2">
                   Spinning up a new service on a Kubernetes cluster for an internal demo
+                </li>
+                <li className="text-center mb-2">
+                  Untagling a mess of unnamed mp3s by writing a Python script
                 </li>
                 <li className="text-center mb-2">
                   Writing Verilog to create a USB3.0 bulk transfer module for FPGAs
@@ -83,27 +101,42 @@ const About = () => {
           </div>
         </section>
         <section>
-          <h3>What's next</h3>
-          <p>
+          <h4 className="text-3xl font-bold text-center pt-20">
+            What&#39;s next
+          </h4>
+          <p className="text-xl text-center mb-12 mt-4">
             Every developer needs new toys to play with from time to time.
             <br />
             Here are a few of mine:
           </p>
-          <div>
-            <div>k8s</div>
-            <div>ML</div>
-            <div>Tailwind</div>
-            <div>Next.js</div>
-            <div>MongoDB</div>
-            <div>GraphQL</div>
+          {/*TODO: Map Function innit*/}
+          <div className="flex flex-wrap justify-center pb-20 gap-8 lg:gap-y-10 lg:gap-x-20 lg:px-[15vw] xl:px-[20vw]">
+            <Tile title="GraphQL">
+              <Image className="h-1/2 w-auto" src={GqlLogo} alt="GraphQL Logo" />
+            </Tile>
+            <Tile title="Kubernetes">
+              <Image className="h-1/2 w-auto" src={K8sLogo} alt="Kubernetes Logo" />
+            </Tile>
+            <Tile title="MongoDB">
+              <Image className="h-1/2 w-auto" src={MdbLogo} alt="MongoDB Logo" />
+            </Tile>
+            <Tile title="Next.js">
+              <Image className="h-1/2 w-auto" src={isDarkMode ? NjsLiteLogo : NjsDarkLogo} alt="Next.js Logo" />
+            </Tile>
+            <Tile title="Tensorflow">
+              <Image className="h-1/2 w-auto" src={TfLogo} alt="Tensorflow Logo" />
+            </Tile>
+            <Tile title="Tailwind">
+              <Image className="h-auto w-1/2" src={TwLogo} alt="Tailwind Logo" />
+            </Tile>
           </div>
         </section>
-        <section>
+        {/*<section>
           <p>
             Want to get to know me a bit better?
             Enter a certain code created by Hashimoto Kazuhisa ...
           </p>
-        </section>
+        </section>*/}
       </article>
     </div>
   );
