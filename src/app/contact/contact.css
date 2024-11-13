@@ -34,9 +34,19 @@
 
 .contact__card__back {
   transform: rotateY(180deg);
+  cursor: default;
+}
+
+.contact__card__link {
+  display: flex;
+  gap: 16px;
+
+  svg {
+    width: 20px;
+  };
 }
 
 .contact__card img {
-  height: 60%;
+  height: 50%;
   width: auto;
 }
