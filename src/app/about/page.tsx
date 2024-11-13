@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react';
 import Image from "next/image";
 import AboutGraphic from '@/assets/about-graphic-transparent.png';
 import AboutGraphicLight from '@/assets/about-graphic-transparent-white.png';
@@ -27,7 +28,10 @@ const Tile = ({ children }: React.PropsWithChildren<TileProps>) => {
 }
 
 const About = () => {
-  const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    setIsDarkMode(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  }, []);
   return (
     <div className={`${MAIN_CLASS} items-center justify-items-center px-8 gap-16 sm:px-20 font-[family-name:var(--font-geist-sans)]` }>
       <article>
