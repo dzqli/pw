@@ -11,10 +11,6 @@ const ROUTES = [
     route: '/about',
   },
   {
-    name: 'Timeline',
-    route: '/timeline',
-  },
-  {
     name: 'Contact',
     route: '/contact',
   },

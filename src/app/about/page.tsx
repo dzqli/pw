@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import Image from "next/image";
+import Image from 'next/image';
+import { TimelineEntries } from './constants';
 import AboutGraphic from '@/assets/about-graphic-transparent.png';
 import AboutGraphicLight from '@/assets/about-graphic-transparent-white.png';
 import CodeIcon from '@/assets/icons/code';
@@ -13,6 +14,8 @@ import NjsLiteLogo from '@/assets/logos/njs-lite.png';
 import NjsDarkLogo from '@/assets/logos/njs-dark.png';
 import TfLogo from '@/assets/logos/tf.png';
 import TwLogo from '@/assets/logos/tw.png';
+
+import './timeline.css';
 
 const MAIN_CLASS = 'about';
 
@@ -101,6 +104,21 @@ const About = () => {
                   Writing Verilog to create a USB3.0 bulk transfer module for FPGAs
                 </li>
               </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h1 className="text-4xl text-center font-bold mt-20  sm:truncate sm:text-4xl sm:tracking-tight">
+            A brief history
+          </h1>
+          <div className="flex items-center justify-center flex-col p-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+            <div>
+              {TimelineEntries.map(item => (
+                <div key={`timeline-item-${item.key}`} className="flex items-center gap-16">
+                  <div className="w-14">{item.label}</div>
+                  <div className={`timeline__item relative pl-8 border-l-4 border-[var(--foreground)] py-8`}>{item.description}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
