@@ -33,11 +33,11 @@ const NavBar = () => {
           : <MenuIcon className="w-6" />
         }
       </button>
-      <div className={`absolute left-0 top-16 w-full flex flex-col items-center p-6 gap-12 transition-transform bg-[var(--background)] ${isMenuOpen ? 'translate-y-0 z-50 shadow-2xl' : '-translate-y-full -z-50'}`}>
+      <div className={`absolute left-0 top-16 w-full flex flex-col items-center transition-transform bg-[var(--background)] sm:hidden ${isMenuOpen ? 'translate-y-0 z-50 shadow-2xl' : '-translate-y-full -z-50'}`}>
         {ROUTES.map((r) => (
           <Link
             key={`nav-link-${r.name}`}
-            className=""
+            className="w-full p-6 text-center hover:bg-[var(--alt-bg)]"
             href={r.route}
             onClick={() => setMenuOpen(false)}
           >
