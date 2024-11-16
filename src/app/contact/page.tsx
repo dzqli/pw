@@ -50,7 +50,7 @@ const Contact = () => {
   const [isCardFlipped, setCardFlipped] = useState(false);
 
   return (
-    <div className="flex items-center justify-center flex-col min-h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="flex items-center justify-center flex-col min-h-[85vh] p-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <div
         className={`${MAIN_CLASS}__card`}
         role="button"
