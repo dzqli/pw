@@ -114,9 +114,9 @@ const About = () => {
           <div className="flex items-center justify-center flex-col p-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
             <div>
               {TimelineEntries.map(item => (
-                <div key={`timeline-item-${item.key}`} className="flex items-center gap-16">
-                  <div className="w-14">{item.label}</div>
-                  <div className={`timeline__item relative pl-8 border-l-4 border-[var(--foreground)] py-8`}>{item.description}</div>
+                <div key={`timeline-item-${item.key}`} className="flex flex-col items-start sm:flex-row sm:items-center sm:gap-16">
+                  <div className="font-bold shrink-0 pl-8 border-l-4 border-[var(--foreground)] sm:w-14 sm:pl-0 sm:border-none">{item.label}</div>
+                  <div className={`timeline__item relative pl-8 border-l-4 border-[var(--foreground)] pt-0 pb-8 sm:py-8`}>{item.description}</div>
                 </div>
               ))}
             </div>
