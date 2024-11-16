@@ -38,8 +38,8 @@ const About = () => {
   return (
     <div className={`${MAIN_CLASS} items-center justify-items-center px-8 gap-16 sm:px-20 font-[family-name:var(--font-geist-sans)]` }>
       <article>
-        <section id="intro" className={`${MAIN_CLASS} min-h-screen flex flex-col`}>
-          <h1 className="text-4xl font-bold leading-7 pt-[40vh] mb-2 sm:truncate sm:tracking-tight">
+        <section id="intro" className={`${MAIN_CLASS} min-h-[95vh] flex flex-col`}>
+          <h1 className="text-4xl font-bold leading-7 pt-[30vh] mb-2 sm:truncate sm:tracking-tight">
             Hi.  I&#39;m David.
           </h1>
           <div className="flex flex-row flex-wrap grow">

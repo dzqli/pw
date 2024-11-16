@@ -1,7 +1,6 @@
 .contact__card {
-  --card-width: 600px;
-  width: var(--card-width);
-  height: calc(0.571 * var(--card-width));
+  width: 100%;
+  height: 70vh;
   perspective: 1000px;
 }
 
@@ -47,6 +46,19 @@
 }
 
 .contact__card img {
-  height: 50%;
-  width: auto;
+  width: 50%;
+  height: auto;
+}
+
+@media (min-width: 640px) {
+  .contact__card {
+    --card-width: 600px;
+    width: var(--card-width);
+    height: calc(0.571 * var(--card-width));
+  }
+
+  .contact__card img {
+    height: 50%;
+    width: auto;
+  }
 }
