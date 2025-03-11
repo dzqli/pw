@@ -26,7 +26,7 @@ export default function Home() {
           Good {timeBand}
         </h1>
       </main>
-        <Skyline className={`fixed left-1/2 -translate-x-1/2 bottom-0 w-auto ${height}`} />
+        <Skyline className={`splash-art fixed left-1/2 -translate-x-1/2 bottom-0 w-auto ${height}`} />
     </div>
   );
 }
