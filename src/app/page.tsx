@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { TimelineEntries } from './timelineItems';
 import ContactCard from '@/components/ContactCard/ContactCard';
+import LoadingSplash from '@/components/LoadingSplash';
 import AboutGraphic from '@/assets/about-graphic-transparent.png';
 import AboutGraphicLight from '@/assets/about-graphic-transparent-white.png';
 import CodeIcon from '@/assets/icons/code';
@@ -33,10 +34,12 @@ const Tile = ({ children }: React.PropsWithChildren<TileProps>) => {
 
 const About = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     setIsDarkMode(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setIsLoaded(true);
   }, []);
-  return (
+  return isLoaded ? (
     <div className={`${MAIN_CLASS} items-center justify-items-center px-8 gap-16 sm:px-20 font-[family-name:var(--font-geist-sans)]` }>
       <article>
         <section id="intro" className={`${MAIN_CLASS} min-h-[100vh] flex flex-col`}>
@@ -169,7 +172,7 @@ const About = () => {
         </section>*/}
       </article>
     </div>
-  );
+  ) : (<LoadingSplash />);
 }
 
 export default About;
