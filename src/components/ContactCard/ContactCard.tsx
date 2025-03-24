@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react';
-import Image from "next/image";
-import Logo from '@/assets/sample-logo-transparent.png';
+// import Image from "next/image";
+// import Logo from '@/assets/sample-logo-transparent.png';
 import LinkedInIcon from '@/assets/icons/linkedin';
 import MailIcon from '@/assets/icons/mail';
 import './contact.css';
@@ -10,7 +10,9 @@ const MAIN_CLASS = 'contact';
 
 const CardFront = () => (
   <div className={`${MAIN_CLASS}__card__front`}>
-    <Image src={Logo} alt="logo" />
+    {/*<Image src={Logo} alt="logo" />*/}
+    <h3 className="text-3xl text-[#f8faf9]">David Li</h3>
+    <h6 className="text-[#425369] text-sm">Software Engineering</h6>
   </div>
 );
 
@@ -18,9 +20,6 @@ const CardFront = () => (
 // TODO: fix contrast on card
 const CardBack = () => (
   <div className={`${MAIN_CLASS}__card__back`}>
-    <h3 className="text-3xl text-[#f8faf9]">David Li</h3>
-    <h6 className="text-[#425369] text-sm">Software Engineering</h6>
-    <br/>
     <div className={`${MAIN_CLASS}__card__link`}>
       <MailIcon />
       <a
