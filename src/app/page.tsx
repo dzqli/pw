@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { TimelineEntries } from './timelineItems';
-import ContactCard from '@/components/ContactCard/ContactCard';
+// import ContactCard from '@/components/ContactCard/ContactCard';
+import LinkedInIcon from '@/assets/icons/linkedin';
+import MailIcon from '@/assets/icons/mail';
 import LoadingSplash from '@/components/LoadingSplash';
 import AboutGraphic from '@/assets/about-graphic-transparent.png';
 import AboutGraphicLight from '@/assets/about-graphic-transparent-white.png';
@@ -21,12 +23,34 @@ import './timeline.css';
 
 const MAIN_CLASS = 'about';
 
+const TileObjects = [
+  { title: 'GraphQL', logo: GqlLogo, logoDark: GqlLogo, alt: 'GraphQL Logo', link: 'https://graphql.org/' },
+  { title: 'Kubernetes', logo: K8sLogo, logoDark: K8sLogo, alt: 'Kubernetes Logo', link: 'https://kubernetes.io/' },
+  { title: 'MongoDB', logo: MdbLogo, logoDark: MdbLogo, alt: 'MongoDB Logo', link: 'https://www.mongodb.com/' },
+  { title: 'Next.js', logo: NjsDarkLogo, logoDark: NjsLiteLogo,  alt: 'Next.js Logo', link: 'https://nextjs.org/' },
+  { title: 'Tensorflow', logo: TfLogo, logoDark: TfLogo, alt: 'Tensorflow Logo', link: 'https://www.tensorflow.org/' },
+  { title: 'Tailwind', logo: TwLogo, logoDark: TwLogo, alt: 'Tailwind Logo', link: 'https://tailwindcss.com/' },
+];
+
+const ContactObjects = [
+  {
+    icon: <MailIcon className='w-7'/>,
+    link: 'mailto:zq.david.li@gmail.com',
+    text: 'zq.david.li@gmail.com'
+  },
+  {
+    icon: <LinkedInIcon className='w-7'/>,
+    link: 'https://www.linkedin.com/in/gydavidli/',
+    text: 'in/gydavidli'
+  },
+];
+
 type TileProps = {
   title: string;
 }
 const Tile = ({ children }: React.PropsWithChildren<TileProps>) => {
   return (
-    <div className="rounded-2xl bg-current flex justify-center items-center w-[30vw] h-[30vw] md:w-[20vw] md:h-[20vw] lg:w-[10vw] lg:h-[10vw]">
+    <div className="rounded-2xl bg-current flex justify-center items-center w-[30vw] h-[30vw] md:w-[20vw] md:h-[20vw] lg:w-[10vw] lg:h-[10vw] hover:scale-110 transition-transform duration-300">
       {children}
     </div>
   );
@@ -135,34 +159,28 @@ const About = () => {
             <br />
             Here are a few of mine:
           </p>
-          {/*TODO: Map Function innit*/}
           <div className="flex flex-wrap justify-center pb-20 gap-8 lg:gap-y-10 lg:gap-x-20 lg:px-[15vw] xl:px-[20vw]">
-            <Tile title="GraphQL">
-              <Image className="h-1/2 w-auto" src={GqlLogo} alt="GraphQL Logo" />
-            </Tile>
-            <Tile title="Kubernetes">
-              <Image className="h-1/2 w-auto" src={K8sLogo} alt="Kubernetes Logo" />
-            </Tile>
-            <Tile title="MongoDB">
-              <Image className="h-1/2 w-auto" src={MdbLogo} alt="MongoDB Logo" />
-            </Tile>
-            <Tile title="Next.js">
-              <Image className="h-1/2 w-auto" src={isDarkMode ? NjsLiteLogo : NjsDarkLogo} alt="Next.js Logo" />
-            </Tile>
-            <Tile title="Tensorflow">
-              <Image className="h-1/2 w-auto" src={TfLogo} alt="Tensorflow Logo" />
-            </Tile>
-            <Tile title="Tailwind">
-              <Image className="h-auto w-1/2" src={TwLogo} alt="Tailwind Logo" />
-            </Tile>
+            {TileObjects.map((tile, index) => (
+              <a key={`tool-tile-${index}`} href={tile.link} target="_blank" rel="noopener noreferrer">
+                <Tile title={tile.title}>
+                  <Image className="h-1/2 w-auto" src={isDarkMode ? tile.logoDark : tile.logo} alt={tile.alt} />
+                </Tile>
+              </a>
+            ))}
           </div>
         </section>
         <section className="flex items-center justify-center flex-col p-5 gap-4 sm:p-20">
-          <h4 className="text-3xl font-bold text-center">
-            Contact
+          <h4 className="text-3xl font-bold pb-5 text-center">
+            Drop me a line!
           </h4>
-          <p className="text-sm text-[var(--secondary)] ml-2 animate-pulse">Tap to flip &darr;</p>
-          <ContactCard />
+          {ContactObjects.map((contact, index) => (
+            <div key={`contact-item-${index}`} className="flex items-center gap-4">
+              {contact.icon}
+              <a href={contact.link} target='_blank' rel="noopener noreferrer">
+                {contact.text}
+              </a>
+            </div>
+          ))}
         </section>
         {/*<section>
           <p>
