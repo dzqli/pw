@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { TimelineEntries } from './timelineItems';
-import ContactCard from '@/components/ContactCard/ContactCard';
+// import ContactCard from '@/components/ContactCard/ContactCard';
+import LinkedInIcon from '@/assets/icons/linkedin';
+import MailIcon from '@/assets/icons/mail';
 import LoadingSplash from '@/components/LoadingSplash';
 import AboutGraphic from '@/assets/about-graphic-transparent.png';
 import AboutGraphicLight from '@/assets/about-graphic-transparent-white.png';
@@ -28,6 +30,19 @@ const TileObjects = [
   { title: 'Next.js', logo: NjsDarkLogo, logoDark: NjsLiteLogo,  alt: 'Next.js Logo', link: 'https://nextjs.org/' },
   { title: 'Tensorflow', logo: TfLogo, logoDark: TfLogo, alt: 'Tensorflow Logo', link: 'https://www.tensorflow.org/' },
   { title: 'Tailwind', logo: TwLogo, logoDark: TwLogo, alt: 'Tailwind Logo', link: 'https://tailwindcss.com/' },
+];
+
+const ContactObjects = [
+  {
+    icon: <MailIcon className='w-7'/>,
+    link: 'mailto:zq.david.li@gmail.com',
+    text: 'zq.david.li@gmail.com'
+  },
+  {
+    icon: <LinkedInIcon className='w-7'/>,
+    link: 'https://www.linkedin.com/in/gydavidli/',
+    text: 'in/gydavidli'
+  },
 ];
 
 type TileProps = {
@@ -155,11 +170,17 @@ const About = () => {
           </div>
         </section>
         <section className="flex items-center justify-center flex-col p-5 gap-4 sm:p-20">
-          <h4 className="text-3xl font-bold text-center">
-            Contact
+          <h4 className="text-3xl font-bold pb-5 text-center">
+            Drop me a line!
           </h4>
-          <p className="text-sm text-[var(--secondary)] ml-2 animate-pulse">Tap to flip &darr;</p>
-          <ContactCard />
+          {ContactObjects.map((contact, index) => (
+            <div key={`contact-item-${index}`} className="flex items-center gap-4">
+              {contact.icon}
+              <a href={contact.link} target='_blank' rel="noopener noreferrer">
+                {contact.text}
+              </a>
+            </div>
+          ))}
         </section>
         {/*<section>
           <p>
